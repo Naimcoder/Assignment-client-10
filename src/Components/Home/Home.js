@@ -1,11 +1,11 @@
 import React from 'react';
 
-const PriavateRoute = () => {
+const Home = () => {
     return (
         <div>
-            
+            <h2>this is home page</h2>
         </div>
     );
 };
 
-export default PriavateRoute;
+export default Home;

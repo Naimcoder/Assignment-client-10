@@ -1,11 +1,11 @@
 import React from 'react';
 
-const PriavateRoute = () => {
+const Footer = () => {
     return (
         <div>
-            
+            <h2>this is footer</h2>
         </div>
     );
 };
 
-export default PriavateRoute;
+export default Footer;
