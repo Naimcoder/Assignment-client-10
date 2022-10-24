@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 
 const Register = () => {
-  const {signinGoogle}=useContext(AuthContext)
+  const {signinGoogle,signinGithub}=useContext(AuthContext)
 
   const handleSubmit=(event)=>{
   event.preventDefault()
@@ -21,6 +21,16 @@ const Register = () => {
             console.log(user)
         })
         .catch(error=>console.log(error))
+  }
+  const handleSignInGithub=()=>{
+    signinGithub()
+    .then( result=>{
+      const user= result.user;
+      console.log(user)
+    })
+    .catch(error=>{
+      console.error(error)
+    })
   }
     return (
         <div className='lg:w-4/12 sm:mb-6 container lg:my-20 rounded  mx-auto  bg-red-300 p-10'>
@@ -91,6 +101,7 @@ const Register = () => {
                       <FaGoogle></FaGoogle> <span className='ml-5'>Login With Google</span>
                     </button>
                     <button
+                    onClick={handleSignInGithub}
                       type="submit"
                       className="text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide bg-black text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                     >
