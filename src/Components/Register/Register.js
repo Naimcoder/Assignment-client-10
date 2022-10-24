@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
+import Swal from 'sweetalert2'
 
 const Register = () => {
-  const {signinGoogle,signinGithub}=useContext(AuthContext)
+  const {signinGoogle,signinGithub,createUser}=useContext(AuthContext)
 
   const handleSubmit=(event)=>{
   event.preventDefault()
@@ -13,6 +14,20 @@ const Register = () => {
   const password=from.password.value;
   const name=from.name.value;
   console.log(email,name,password)
+  createUser(email,password)
+  .then(result=>{
+    const user= result.user
+    console.log(user)
+    from.reset()
+  Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+  })
+  .catch(error=>{
+    console.log(error)
+  })
   }
   const handleSignInGoogle=()=>{
         signinGoogle()
@@ -33,7 +48,7 @@ const Register = () => {
     })
   }
     return (
-        <div className='lg:w-4/12 sm:mb-6 container lg:my-20 rounded  mx-auto  bg-red-300 p-10'>
+        <div className='lg:w-4/12 sm:mb-6 container lg:my-20 bg-stone-200  mx-auto rounded shadow-2xl p-10'>
            <h3 className="lg:text-3xl mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                  Register
                 </h3>

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 
@@ -92,8 +93,8 @@ const Header = () => {
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
            {
-            user?.email?<><p>{user?.displayName}</p>
-            <button onClick={handleSignOut}>Logout</button>
+            user?.uid?<><p className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  capitalize text-xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>{user?.displayName}</p>
+            <button className='bg-white  inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black  capitalize text-2xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none' onClick={handleSignOut}>Logout</button>
             </>:<>
               <li>
               <Link
@@ -116,6 +117,9 @@ const Header = () => {
               </Link>
             </li>
             </>
+           }
+           {user?.photoURL?<img className='w-12 rounded-full' src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
+
            }
           </ul>
           <div className="lg:hidden">
