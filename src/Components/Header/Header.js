@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/UseContext';
 
 
 const Header = () => {
       const [isMenuOpen, setIsMenuOpen] = useState(false);
+      const {user,logOut}=useContext(AuthContext);
+
+      const handleSignOut =()=>{
+       logOut()
+       .then(()=>{
+        
+       })
+       .catch((error)=>{
+            console.error(error)
+       })
+      }
     return (
         <div>
 <div className="bg-gray-900">
@@ -79,7 +91,11 @@ const Header = () => {
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
-            <li>
+           {
+            user?.email?<><p>{user?.displayName}</p>
+            <button onClick={handleSignOut}>Logout</button>
+            </>:<>
+              <li>
               <Link
                 to="/login"
                 aria-label="Sign in"
@@ -99,6 +115,8 @@ const Header = () => {
                 Sign up
               </Link>
             </li>
+            </>
+           }
           </ul>
           <div className="lg:hidden">
             <button

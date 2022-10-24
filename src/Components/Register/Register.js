@@ -93,7 +93,13 @@ const Register = () => {
                     >
                       REGISTER
                     </button>
-                      <button
+                  </div>
+                  <p className=" lg:text-xl pb-8 font-bold text-gray-600 sm:text-sm">
+                   Already Have an Account ? <Link className='lg:text-1xl underline text-blue-700' to='/login'>Please Login</Link>
+                  </p>
+                </form>
+                <div>
+                   <button
                       onClick={handleSignInGoogle}
                       type="submit"
                       className="my-5 text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  bg-blue-600 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
@@ -108,11 +114,7 @@ const Register = () => {
                         
                      <FaGithub/>  <span className='ml-5'>Login With GitHub</span>
                     </button>
-                  </div>
-                  <p className=" lg:text-xl pb-8 font-bold text-gray-600 sm:text-sm">
-                   Already Have an Account ? <Link className='lg:text-1xl underline text-blue-700' to='/login'>Please Login</Link>
-                  </p>
-                </form>
+                </div>
         </div>
     );
 };
