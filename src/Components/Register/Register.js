@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/UseContext';
 
 const Register = () => {
+  const {signinGoogle}=useContext(AuthContext)
+
+  const handleSubmit=(event)=>{
+  event.preventDefault()
+  const from = event.target;
+  const email= from.email.value;
+  const password=from.password.value;
+  const name=from.name.value;
+  console.log(email,name,password)
+  }
+  const handleSignInGoogle=()=>{
+        signinGoogle()
+        .then((result)=>{
+            const user= result.user
+            console.log(user)
+        })
+        .catch(error=>console.log(error))
+  }
     return (
         <div className='lg:w-4/12 sm:mb-6 container lg:my-20 rounded  mx-auto  bg-red-300 p-10'>
            <h3 className="lg:text-3xl mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                  Register
                 </h3>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="firstName"
@@ -65,6 +84,7 @@ const Register = () => {
                       REGISTER
                     </button>
                       <button
+                      onClick={handleSignInGoogle}
                       type="submit"
                       className="my-5 text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  bg-blue-600 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                     >
