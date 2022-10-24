@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { IconName } from "react-icons/fa";
 const Login = () => {
     return (
         <div>
            <div className='lg:w-4/12 lg:p-10 sm:mb-6 container lg:my-20 rounded  mx-auto  bg-red-300 p-5'>
-           <h3 className="lg:text-center  mb-4 lg:text3xl font-bold sm:text-center sm:mb-6 sm:text-2xl">
-                  Sign In
+           <h3 className="lg:text-center  mb-4 lg:text-3xl font-bold sm:text-center sm:mb-6 sm:text-2xl">
+                  Login
                 </h3>
                 <form>
                   <div className="mb-1 sm:mb-2">
@@ -46,14 +46,16 @@ const Login = () => {
                       type="submit"
                       className="text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide bg-black text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                     >
-                      Login
+                        LOGIN
+                      
                     </button>
-                     <div className='text-2xl py-3 flex font-bold justify-between '>
-                       
-                        <p className="text-xl  text-gray-600 sm:text-sm">
+                  
+                     <div className='lg:text-xl sm:text-xs py-3  font-bold '>
+                   <p className='lg:text-xl sm:text-xs underline text-blue-600 underline-offset-1'>Forget Password</p>
+                   <br></br>
+                    <p className="lg:text-xl  text-gray-600 sm:text-sm">
                           New User In Webside ? <Link className=' underline  text-cyan-500' to='/register'>Please Register</Link>
                          </p>
-                   <p className='text-xl underline text-blue-600 underline-offset-1'>Forget Password</p>
                      </div>
                   </div>
                  
