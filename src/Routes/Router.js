@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog/Blog";
 import Courses from "../Components/Courses/Courses";
-import ErrorPase from "../Components/ErrorPase";
+import ErrorPage from "../Components/ErrorPage";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
 {
     path:'/',
     element:<Root></Root>,
-    errorElement:<ErrorPase></ErrorPase>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
         {path:'/',
          element:<Home></Home>,

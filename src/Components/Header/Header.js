@@ -213,8 +213,6 @@ const Header = () => {
                           Features
                         </Link>
                       </li>
-                     
-                  
                       <li>
                         <Link
                           to="/login"
