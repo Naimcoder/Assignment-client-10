@@ -5,7 +5,7 @@ import { AuthContext } from '../../Context/UseContext';
 import Swal from 'sweetalert2'
 
 const Register = () => {
-  const {signinGoogle,signinGithub,createUser}=useContext(AuthContext)
+  const {signinGoogle,signinGithub,createUser,userUpdateName}=useContext(AuthContext)
 
   const handleSubmit=(event)=>{
   event.preventDefault()
@@ -18,6 +18,7 @@ const Register = () => {
   .then(result=>{
     const user= result.user
     console.log(user)
+    handleupdateName(name)
     from.reset()
   Swal.fire(
   'Good job!',
@@ -44,6 +45,14 @@ const Register = () => {
       console.log(user)
     })
     .catch(error=>{
+      console.error(error)
+    })
+  }
+  const handleupdateName=name=>{
+    userUpdateName(name)
+    .then(()=>{
+    })
+    .catch((error)=>{
       console.error(error)
     })
   }

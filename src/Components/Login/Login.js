@@ -4,22 +4,28 @@ import { AuthContext } from '../../Context/UseContext';
 import Swal from 'sweetalert2'
 
 const Login = () => {
+
+
+
+
 const {signIn,forgetPassword}=useContext(AuthContext)
 const [userEmail,setUserEmail]=useState('')
 const location= useLocation()
 const navigate= useNavigate()
-const from= location.state?.from?.pathname ||'/'
+const from= location.state?.from?.pathname ||'/';
+
+
  const handleSubmit=(event)=>{
   event.preventDefault()
-  const from = event.target;
-  const email= from.email.value;
-  const password=from.password.value;
+  const froms = event.target;
+  const email= froms.email.value;
+  const password=froms.password.value;
   console.log(email,password)
   signIn(email,password)
   .then((result)=>{
     const user=result.user
     console.log(user)
-   from.reset()
+   froms.reset()
         Swal.fire(
   'Good job!',
   'You clicked the button!',
