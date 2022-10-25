@@ -1,9 +1,17 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CouresCard from '../CouresCard.js/CouresCard';
+import SingleCourse from '../SingleCourse/SingleCourse';
 
 const Courses = () => {
+const allcourses= useLoaderData()
     return (
-        <div>
-           <h2>this is courses</h2> 
+        <div className='flex  justify-between mx-auto container'>
+         <SingleCourse></SingleCourse>
+          <div className='grid grid-cols-3 gap-5 lg:ml-14 lg:py-10'>
+             {/* <h2>this is cours🇸🇻{allcourses.length}</h2>  */}
+             {allcourses.map(courses=><CouresCard key={courses.id} courses={courses}></CouresCard>)}
+          </div>
         </div>
     );
 };

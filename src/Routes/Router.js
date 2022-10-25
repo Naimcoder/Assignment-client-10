@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog/Blog";
 import Courses from "../Components/Courses/Courses";
+import CoursesDetails from "../Components/CoursesDetails/CoursesDetails";
 import ErrorPage from "../Components/ErrorPage";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
@@ -16,11 +17,19 @@ export const router = createBrowserRouter([
         {path:'/',
          element:<Home></Home>,
         },
+
         {path:'/home',
         element:<Home></Home>
         },
+
         {path:'/courses',
-        element:<Courses></Courses>
+         element:<Courses></Courses>,
+        loader: ()=>fetch('https://coures-express-server-naimcoder.vercel.app/allcourse')
+        },
+        {
+        path:'/allcourse/:id',
+        element:<CoursesDetails></CoursesDetails>,
+        loader:({params})=>fetch(`https://coures-express-server-naimcoder.vercel.app/allcourse/${params.id}`)
         },
         {
          path:"/login",
@@ -33,7 +42,7 @@ export const router = createBrowserRouter([
         {
             path:'/blog',
             element:<Blog></Blog>
-        }
+        },
     ]
 }
 ])
