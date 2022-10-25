@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 import Swal from 'sweetalert2'
 
 const Login = () => {
 const {signIn,forgetPassword}=useContext(AuthContext)
 const [userEmail,setUserEmail]=useState('')
+const location= useLocation()
+const navigate= useNavigate()
+const from= location.state?.from?.pathname ||'/'
  const handleSubmit=(event)=>{
   event.preventDefault()
   const from = event.target;
@@ -22,6 +25,7 @@ const [userEmail,setUserEmail]=useState('')
   'You clicked the button!',
   'success'
 )
+navigate(from,{replace:true})
   })
   .catch((error)=>{
      console.error(error)

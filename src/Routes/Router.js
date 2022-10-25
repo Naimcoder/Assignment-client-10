@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog/Blog";
+import Checkout from "../Components/Checkout/Checkout";
 import Courses from "../Components/Courses/Courses";
 import CoursesDetails from "../Components/CoursesDetails/CoursesDetails";
 import ErrorPage from "../Components/ErrorPage";
@@ -7,6 +8,7 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import Root from "../Layout/Root";
+import PrivateRoute from "./PriavateRoute";
 export const router = createBrowserRouter([
 {
     path:'/',
@@ -42,6 +44,10 @@ export const router = createBrowserRouter([
             path:'/blog',
             element:<Blog></Blog>
         },
+        {
+            path:'/checkout',
+            element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
+        }
     ]
 }
 ])

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CoursesDetails = () => {
     const singleCourses =useLoaderData()
@@ -21,7 +21,9 @@ const CoursesDetails = () => {
 				<h3 className="text-sm font-medium">{author.name}</h3>
 				<time datetime="2021-02-18" className="text-sm dark:text-gray-400">{author.published_date}</time>
 			</div>
-        
+            <Link to='/checkout'>
+             <button className=''>Get premium</button>
+            </Link>
 		</div>
 	</article>
 </div>
