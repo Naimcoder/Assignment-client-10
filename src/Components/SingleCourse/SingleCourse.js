@@ -14,7 +14,7 @@ const SingleCourse = () => {
         <div className=''>
            {
             course.map(course=><p className='text-2xl py-2  font-medium' key={course.id}>
-                <Link>{course.name}</Link></p>)
+                <Link to={`allcourses/${course.id}`}>{course.name}</Link></p>)
            }
         </div>
     );

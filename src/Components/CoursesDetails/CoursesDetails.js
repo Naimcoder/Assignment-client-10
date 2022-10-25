@@ -17,6 +17,7 @@ const CoursesDetails = () => {
 		<div className="flex items-center mt-8 space-x-4">
             <span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
 			<div>
+                <p>Author:-</p>
 				<h3 className="text-sm font-medium">{author.name}</h3>
 				<time datetime="2021-02-18" className="text-sm dark:text-gray-400">{author.published_date}</time>
 			</div>
