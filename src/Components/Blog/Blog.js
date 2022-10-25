@@ -2,6 +2,8 @@ import React from 'react';
 
 const Blog = () => {
     return (
+      <div>
+      <h2 className='text-4xl py-2 text-center font-semibold'>Our Blog</h2>
         <div className='grid sm:grid-cols-1 gap-5 lg:grid-cols-3 mx-auto container py-10'>
               <div className="block p-6 mb-6 bg-white rounded-lg border  shadow-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-100 lg:mb-0">
                 <h2 className='text-2xl font-medium'>1.Question: what is cors?</h2>
@@ -30,6 +32,7 @@ The current logged in user (authUser) is retrieved from Redux state with a call 
                  <p className='py-5 text-xl'>Ans:- It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive</p>
               </div>
         </div>
+      </div>
     );
 };
 

@@ -4,12 +4,12 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const CoursesDetails = () => {
     const singleCourses =useLoaderData()
-    const {name,title,author,image,details}=singleCourses
+    const {id,name,title,author,image,details}=singleCourses
     console.log(singleCourses)
     return (
         <div>
             <h2 className='py-5 text-2xl font-semibold text-center'>Course: {name}</h2>
-            <div className="sm:max-w-xl lg:w-8/12 mx-auto lg:p-15 p-6 overflow-hidden rounded-lg my-5 bg-white shadow-lg dark:text-gray-100">
+            <div className="sm:max-w-xl lg:w-8/12 mx-auto lg:p-15 p-6 overflow-hidden rounded-lg my-5 bg-white shadow-xl dark:text-gray-100">
 	<article>
         <img className='mx-auto' src={image} alt="" />
 		<h2 className="text-xl font-bold">{title}</h2>
@@ -21,8 +21,8 @@ const CoursesDetails = () => {
 				<h3 className="text-sm font-medium">{author.name}</h3>
 				<time datetime="2021-02-18" className="text-sm dark:text-gray-400">{author.published_date}</time>
 			</div>
-            <Link to='/checkout'>
-             <button className=''>Get premium</button>
+            <Link to={`/checkout/${id}`}>
+             <button className='btn ml-32 text-white text-xl font-bold bg-blue-600 py-2 px-10 rounded shadow-lg'>Get premium</button>
             </Link>
 		</div>
 	</article>

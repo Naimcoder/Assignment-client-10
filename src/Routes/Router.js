@@ -46,8 +46,9 @@ export const router = createBrowserRouter([
             element:<Blog></Blog>
         },
         {
-            path:'/checkout',
-            element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
+            path:'/checkout/:id',
+            element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
+            loader:({params})=>fetch(`https://coures-express-server-naimcoder.vercel.app/checkout/${params.id}`)
         },
         {
             path:'/faqs',
