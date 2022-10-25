@@ -4,6 +4,7 @@ import Checkout from "../Components/Checkout/Checkout";
 import Courses from "../Components/Courses/Courses";
 import CoursesDetails from "../Components/CoursesDetails/CoursesDetails";
 import ErrorPage from "../Components/ErrorPage";
+import FAQ from "../Components/FAQ/FAQ";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
         {
             path:'/checkout',
             element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
+        },
+        {
+            path:'/faqs',
+            element:<FAQ></FAQ>
         }
     ]
 }

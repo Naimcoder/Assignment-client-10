@@ -5,7 +5,7 @@ const ErrorPage = () => {
     const error = useRouteError();
   console.error(error);
     return (
- <section className="flex items-center lg:h-full  lg:py-56 p-16 bg-gray-900 text-white dark:text-gray-100">
+ <section className="flex items-center lg:h-full  lg:py-64 p-16 bg-gray-900 text-white dark:text-gray-100">
 	<div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
 		<div className="max-w-md text-center">
 			<h2 className="mb-8 font-extrabold text-9xl dark:text-gray-600">
