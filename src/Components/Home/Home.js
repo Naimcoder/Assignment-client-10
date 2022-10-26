@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ReactPdprint from '../print/ReactPdprint';
 
 const Home = () => {
     return (
@@ -41,7 +40,6 @@ const Home = () => {
         />
       </div>
     </div>
-    <ReactPdprint></ReactPdprint>
   </div>
 
     );
