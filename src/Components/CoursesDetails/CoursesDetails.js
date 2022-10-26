@@ -3,13 +3,14 @@ import { FaUser } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const CoursesDetails = () => {
+    
     const singleCourses =useLoaderData()
     const {id,name,title,author,image,details}=singleCourses
-    console.log(singleCourses)
+
     return (
-        <div>
-            <h2 className='py-5 text-2xl font-semibold text-center'>Course: {name}</h2>
-            <div className="sm:max-w-xl lg:w-8/12 mx-auto lg:p-15 p-6 overflow-hidden rounded-lg my-5 bg-white shadow-xl dark:text-gray-100">
+  <div>
+     <h2 className='py-5 text-2xl font-semibold text-center'>Course: {name}</h2>
+  <div className="sm:max-w-xl lg:w-8/12 mx-auto lg:p-15 p-6 overflow-hidden rounded-lg my-5 bg-white shadow-xl dark:text-gray-100">
 	<article>
         <img className='mx-auto' src={image} alt="" />
 		<h2 className="text-xl font-bold">{title}</h2>
@@ -26,8 +27,8 @@ const CoursesDetails = () => {
             </Link>
 		</div>
 	</article>
-</div>
-        </div>
+  </div>
+ </div>
     );
 };
 

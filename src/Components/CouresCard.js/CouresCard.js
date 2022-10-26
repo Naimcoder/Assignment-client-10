@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CouresCard = ({courses}) => {
+
 console.log(courses)
 const {id,name,details,image}= courses
+
+
     return (
-        <div>
-        <div className=" p-5 w-10/12 overflow-hidden transition-shadow duration-300   bg-orange-100 rounded shadow-sm">
+    <div>
+      <div className=" p-5 w-10/12 overflow-hidden transition-shadow duration-300    bg-orange-100  rounded shadow-sm">
           <img className='mx-auto rounded' src={image} alt="" />
           <div className="p-5">
             <Link
@@ -27,10 +30,9 @@ const {id,name,details,image}= courses
             >
               Learn more
             </Link>
-          </div>
-        </div>
-        </div>
-        
+         </div>
+       </div>
+    </div>
     );
 };
 

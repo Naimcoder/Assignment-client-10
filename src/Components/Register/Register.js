@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
@@ -6,30 +6,36 @@ import Swal from 'sweetalert2'
 
 const Register = () => {
   const {signinGoogle,signinGithub,createUser,userUpdateName}=useContext(AuthContext)
+  const [error,setError]=useState('')
 
+  // handlesubmit part start
   const handleSubmit=(event)=>{
+
   event.preventDefault()
   const from = event.target;
   const email= from.email.value;
   const password=from.password.value;
   const name=from.name.value;
   console.log(email,name,password)
+
   createUser(email,password)
   .then(result=>{
     const user= result.user
     console.log(user)
     handleupdateName(name)
     from.reset()
-  Swal.fire(
-  'Good job!',
-  'You clicked the button!',
-  'success'
-)
+    Swal.fire(
+    'Good job!',
+    'You clicked the button!',
+    'success'
+    )
   })
   .catch(error=>{
     console.log(error)
+    setError(error.message)
   })
   }
+  // signInGoogle part start
   const handleSignInGoogle=()=>{
         signinGoogle()
         .then((result)=>{
@@ -38,6 +44,7 @@ const Register = () => {
         })
         .catch(error=>console.log(error))
   }
+  // signInGithub part start
   const handleSignInGithub=()=>{
     signinGithub()
     .then( result=>{
@@ -48,12 +55,14 @@ const Register = () => {
       console.error(error)
     })
   }
+  // updateprofile part start
   const handleupdateName=name=>{
     userUpdateName(name)
     .then(()=>{
     })
     .catch((error)=>{
       console.error(error)
+      setError(error.message)
     })
   }
     return (
@@ -118,6 +127,8 @@ const Register = () => {
                       REGISTER
                     </button>
                   </div>
+                  <span className='text-center'>{error}</span>
+                  <br></br>
                   <p className=" lg:text-xl pb-8 font-bold text-gray-600 sm:text-sm">
                    Already Have an Account ? <Link className='lg:text-1xl underline text-blue-700' to='/login'>Please Login</Link>
                   </p>
@@ -135,7 +146,6 @@ const Register = () => {
                       type="submit"
                       className="text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide bg-black text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                     >
-                        
                      <FaGithub/>  <span className='ml-5'>Login With GitHub</span>
                     </button>
                 </div>

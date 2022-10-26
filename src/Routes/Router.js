@@ -21,17 +21,17 @@ export const router = createBrowserRouter([
         },
 
         {path:'/home',
-        element:<Home></Home>
+         element:<Home></Home>
         },
 
         {path:'/courses',
          element:<Courses></Courses>,
-        loader: ()=>fetch('https://coures-express-server-naimcoder.vercel.app/allcourse')
+         loader: ()=>fetch('https://coures-express-server-naimcoder.vercel.app/allcourse')
         },
         {
-        path:'/allcourse/:id',
-        element:<CoursesDetails></CoursesDetails>,
-        loader:({params})=>fetch(`https://coures-express-server-naimcoder.vercel.app/allcourse/${params.id}`)
+         path:'/allcourse/:id',
+         element:<CoursesDetails></CoursesDetails>,
+         loader:({params})=>fetch(`https://coures-express-server-naimcoder.vercel.app/allcourse/${params.id}`)
         },
         {
          path:"/login",

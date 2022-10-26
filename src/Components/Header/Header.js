@@ -5,23 +5,27 @@ import { AuthContext } from '../../Context/UseContext';
 import img from '../../logo.png'
 
 const Header = () => {
+  
       const [isMenuOpen, setIsMenuOpen] = useState(false);
       const {user,logOut}=useContext(AuthContext);
 
+      // logout handler 
       const handleSignOut =()=>{
        logOut()
        .then(()=>{
-        
+
        })
        .catch((error)=>{
-            console.error(error)
+        console.error(error)
        })
       }
+
+
     return (
-        <div>
-<div className="bg-gray-900">
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="relative flex items-center justify-between">
+    <div>
+        <div className="bg-gray-900">
+               <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+              <div className="relative flex items-center justify-between">
           <div className="flex items-center">
             <Link
               to="/"
@@ -103,7 +107,7 @@ const Header = () => {
             </li>
             </>
            }
-           {user?.photoURL?<img className='w-12 rounded-full' src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
+           {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
 
            }
           </ul>
@@ -140,23 +144,8 @@ const Header = () => {
                         title="Company"
                         className="inline-flex items-center"
                       >
-                        <svg
-                          className="w-8 text-deep-purple-accent-400"
-                          viewBox="0 0 24 24"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeMiterlimit="10"
-                          stroke="currentColor"
-                          fill="none"
-                        >
-                          <rect x="3" y="1" width="7" height="12" />
-                          <rect x="3" y="17" width="7" height="6" />
-                          <rect x="14" y="1" width="7" height="6" />
-                          <rect x="14" y="11" width="7" height="12" />
-                        </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Company
+                          <img src={img} alt="" />
                         </span>
                       </Link>
                     </div>
@@ -244,11 +233,10 @@ const Header = () => {
               </div>
             )}
           </div>
-        </div>
+         </div>
+       </div>
       </div>
-    </div>
-            
-        </div>
+   </div>
     );
 };
 
