@@ -9,7 +9,7 @@ const {id,name,details,image}= courses
 
     return (
     <div>
-      <div className=" shadow-lg p-5 w-10/12 overflow-hidden transition-shadow duration-300    bg-orange-100  rounded">
+      <div className=" shadow-lg  mx-auto p-5 w-10/12 overflow-hidden transition-shadow duration-300    bg-orange-100  rounded">
           <img className='mx-auto rounded' src={image} alt="" />
           <div className="p-5">
             <Link
@@ -28,7 +28,7 @@ const {id,name,details,image}= courses
               aria-label=""
               className="text-lg mt-5 w-full text-blue-700 inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
-              <button className='  w-full pointer-events-auto  uppercase bg-indigo-600 py-3 px-2  font-semibold leading-5 text-white hover:bg-indigo-500'>Details</button>
+              <button className=' pointer-events-auto  uppercase bg-indigo-600 py-3 px-2  font-semibold leading-5 text-white hover:bg-indigo-500'>Details</button>
             </Link>
          </div>
        </div>

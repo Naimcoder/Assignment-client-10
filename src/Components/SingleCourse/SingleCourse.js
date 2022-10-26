@@ -13,7 +13,7 @@ const SingleCourse = () => {
     return (
         <div className=''>
            {
-            course.map(course=><p className='text-2xl py-2 shadow-lg  bg-cyan-600 my-4 text-center  px-12  font-medium' key={course.id}>
+            course.map(course=><p className='text-2xl py-2 shadow-lg  bg-cyan-600 my-4 text-center  lg:px-12  font-medium' key={course.id}>
                 <Link to={`/allcourse/${course.id}`}>{course.name}</Link></p>)
            }
         </div>

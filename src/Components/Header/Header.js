@@ -211,7 +211,11 @@ const Header = () => {
                           Blog
                         </Link>
                       </li>
-                      <li>
+                      {
+                        user?.uid?<><p className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black  capitalize text-xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>{user?.displayName}</p>
+                        <button className='bg-white  inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black  capitalize text-2xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none' onClick={handleSignOut}>Logout</button>
+                       </>:<>
+                        <li>
                         <Link
                           to="/login"
                           aria-label="Sign in"
@@ -231,6 +235,11 @@ const Header = () => {
                           Sign up
                         </Link>
                       </li>
+                       </>
+                      }
+                     {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
+
+           }
                     </ul>
                   </nav>
                 </div>
