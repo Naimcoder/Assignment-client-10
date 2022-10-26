@@ -4,12 +4,15 @@ import { Link, useLoaderData } from 'react-router-dom';
 import ReactToPdf from "react-to-pdf";
 
 const CoursesDetails = () => {
+
     const ref = React.createRef();
     const singleCourses =useLoaderData()
     const {id,name,title,author,image,details}=singleCourses
 
     return (
-  <div >
+
+
+  <div>
      <h2 className='py-5 text-2xl font-semibold text-center'>Course: {name}</h2>
   <div className="sm:max-w-xl lg:w-8/12 mx-auto lg:p-15 p-6 overflow-hidden rounded-lg my-5 bg-white shadow-xl dark:text-gray-100">
 	<article  ref={ref}>
@@ -18,6 +21,8 @@ const CoursesDetails = () => {
 	  <h2 className="text-xl font-bold">{title}</h2>
     {/* react to pdf start */}
    <div>
+
+
     <ReactToPdf x={30}
         y={20} className='pl-30' targetRef={ref} filename="div-blue.pdf">
         {({toPdf}) => (
@@ -25,12 +30,13 @@ const CoursesDetails = () => {
         )}
     </ReactToPdf>
    </div>
+
     </div>
 		<p  className="mt-4  dark:text-gray-400">{details}</p>
 		<div className="flex items-center mt-8 space-x-4">
-            <span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
+             <span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
 			<div>
-         <p>Author:-</p>
+               <p>Author:-</p>
 				<h3 className="text-sm font-medium">{author.name}</h3>
 				<time datetime="2021-02-18" className="text-sm dark:text-gray-400">{author.published_date}</time>
 			</div>
@@ -40,7 +46,6 @@ const CoursesDetails = () => {
 		</div>
 	</article>
   <div className="text-center">
-   
   </div>
   </div>
  </div>

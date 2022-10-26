@@ -42,44 +42,44 @@ const Header = () => {
             </Link>
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
-                <Link
+                <NavLink
                   to="/home"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-xl capitalize text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=>isActive?"font-medium tracking-wide text-xl capitalize  text-blue-500 transition-colors duration-200 hover:text-teal-accent-400":"font-medium tracking-wide text-xl capitalize text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"}
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/courses"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-xl capitalize text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=>isActive?"font-medium tracking-wide text-xl capitalize  text-blue-500 transition-colors duration-200 hover:text-teal-accent-400":"font-medium tracking-wide text-xl capitalize text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"}
                 >
                   Courses
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/faqs"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium  text-xl capitalize tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=>isActive?"font-medium tracking-wide text-xl capitalize  text-blue-500 transition-colors duration-200 hover:text-teal-accent-400":"font-medium tracking-wide text-xl capitalize text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"}
                 >
                  FAQ
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/blog"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium  text-xl capitalize tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=>isActive?"font-medium tracking-wide text-xl capitalize  text-blue-500 transition-colors duration-200 hover:text-teal-accent-400":"font-medium tracking-wide text-xl capitalize text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"}
                 >
                  Blog
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
