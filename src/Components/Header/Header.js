@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FaMoon, FaUser } from 'react-icons/fa';
+import {  FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 import img from '../../logo.png'

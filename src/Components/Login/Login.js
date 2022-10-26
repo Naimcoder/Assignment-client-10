@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 const Login = () => {
 
 
-const {signIn,forgetPassword}=useContext(AuthContext)
+const {signIn,forgetPassword,}=useContext(AuthContext)
 const [userEmail,setUserEmail]=useState('')
 const [error,setError]= useState('')
 const location= useLocation()
