@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { FaUser } from 'react-icons/fa';
+import { FaMoon, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 import img from '../../logo.png'
+import './Header.css'
 
 const Header = () => {
   
       const [isMenuOpen, setIsMenuOpen] = useState(false);
+      const [darkMode,setDarkmode]=useState(false)
+
       const {user,logOut}=useContext(AuthContext);
 
       // logout handler 
@@ -23,7 +26,7 @@ const Header = () => {
 
     return (
     <div>
-        <div className="bg-gray-900">
+        <div className={darkMode ? "light":"bg-gray-900"}>
                <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
               <div className="relative flex items-center justify-between">
           <div className="flex items-center">
@@ -90,7 +93,7 @@ const Header = () => {
                 to="/login"
                 aria-label="Sign in"
                 title="Sign in"
-                className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  capitalize text-2xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className=" inline-flex items-center justify-center h-12 px-6 font-medium  text-white  capitalize text-2xl transition duration-200 rounded shadow-md  "
               >
                 Sign in
               </Link>
@@ -110,6 +113,7 @@ const Header = () => {
            {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
 
            }
+           <input onChange={()=>{setDarkmode(!darkMode)}} className='text-2xl' type="checkbox" />
           </ul>
           <div className="lg:hidden">
             <button
