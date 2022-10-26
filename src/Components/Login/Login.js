@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 import Swal from 'sweetalert2'
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
-const {signIn,forgetPassword,}=useContext(AuthContext)
+const {signIn,forgetPassword,signinGoogle,signinGithub}=useContext(AuthContext)
 const [userEmail,setUserEmail]=useState('')
 const [error,setError]= useState('')
 const location= useLocation()
@@ -49,6 +50,41 @@ const from= location.state?.from?.pathname ||'/';
     console.error(error)
     setError(error.message)
   });
+  }
+
+    // signInGoogle part start
+  const handleSignInGoogle=()=>{
+        signinGoogle()
+        .then((result)=>{
+            const user= result.user
+            console.log(user)
+             Swal.fire(
+     'Good job!',
+    'You clicked the button!',
+    'success'
+    )
+  // navigate part start
+  navigate(from,{replace:true})
+        })
+        .catch(error=>console.log(error))
+  }
+  // signInGithub part start
+  const handleSignInGithub=()=>{
+    signinGithub()
+    .then( result=>{
+      const user= result.user;
+      console.log(user)
+       Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+    )
+  // navigate part start
+  navigate(from,{replace:true})
+    })
+    .catch(error=>{
+      console.error(error)
+    })
   }
 
     return (
@@ -110,6 +146,22 @@ const from= location.state?.from?.pathname ||'/';
                      </div>
                   </div>
                 </form>
+                  <div>
+                   <button
+                      onClick={handleSignInGoogle}
+                      type="submit"
+                      className="my-5 text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  bg-blue-600 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    >
+                      <FaGoogle></FaGoogle> <span className='ml-5'>Login With Google</span>
+                    </button>
+                    <button
+                    onClick={handleSignInGithub}
+                      type="submit"
+                      className="text-xl inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide bg-black text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    >
+                     <FaGithub/>  <span className='ml-5'>Login With GitHub</span>
+                    </button>
+                </div>
            </div>
         </div>
     );

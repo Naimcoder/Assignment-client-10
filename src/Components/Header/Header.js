@@ -113,7 +113,7 @@ const Header = () => {
            {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
 
            }
-           <input onChange={()=>{setDarkmode(!darkMode)}} className='text-2xl' type="checkbox" />
+           <input  onChange={()=>{setDarkmode(!darkMode)}} className='text-2xl toggle toggle-accent' type="checkbox" />
           </ul>
           <div className="lg:hidden">
             <button
