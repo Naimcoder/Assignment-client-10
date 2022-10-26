@@ -16,14 +16,15 @@ const Register = () => {
   const email= from.email.value;
   const password=from.password.value;
   const name=from.name.value;
-  console.log(email,name,password)
+  const photoURL=from.photoURL.value
+  console.log(email,name,password,photoURL)
 
   createUser(email,password)
   .then(result=>{
     const user= result.user
     console.log(user)
-    handleupdateName(name)
     from.reset()
+    handleupdateName(name,photoURL)
     Swal.fire(
     'Good job!',
     'You clicked the button!',
@@ -56,8 +57,12 @@ const Register = () => {
     })
   }
   // updateprofile part start
-  const handleupdateName=name=>{
-    userUpdateName(name)
+  const handleupdateName=(name,photoURL)=>{
+    const profile = {
+      displayName:name,
+      photoURL:photoURL
+    }
+    userUpdateName(profile)
     .then(()=>{
     })
     .catch((error)=>{
@@ -85,6 +90,22 @@ const Register = () => {
                       className="text-xl flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="name"
                       name="name"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="PhotoURL"
+                      className="text-xl inline-block mb-1 font-medium"
+                    >
+                     PhotoURL
+                    </label>
+                    <input
+                      placeholder="Enter Your ImageUrl"
+                      required
+                      type="text"
+                      className="text-xl flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="PhotoURL"
+                      name="PhotoURL"
                     />
                   </div>
                   <div className="mb-1 sm:mb-2">
