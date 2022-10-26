@@ -1,7 +1,7 @@
 # Welcome to our Website ---- EduVide
 
 WebSite  [Live Link]...
-or...(https://edukul-quiz.netlify.app/) Livelink
+or...(https://courses-authentication-context.web.app) Livelink
 
 ![plot](./src/logo.png)
 
@@ -17,9 +17,9 @@ or...(https://edukul-quiz.netlify.app/) Livelink
 
 ### what is the learn of website?
 > * website A poroper check can check how much the students are learning
-> *  
-> * 
-> * 
+> * About programming language can be learned porpely
+> * The specific programming can take ideas about language
+> * Besides,which programming language is used for what purpose is mentioned
 
 | # setup:
 
