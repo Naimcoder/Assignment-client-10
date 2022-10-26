@@ -49,9 +49,9 @@ return signInWithEmailAndPassword(auth,email,password)
 return sendPasswordResetEmail(auth,email)
  }
 //  updateName part start
- const userUpdateName=(profile)=>{
+ const userUpdateName=(name,photoURL)=>{
     setLoader(true)
-  return updateProfile(auth.currentUser,profile)
+  return updateProfile(auth.currentUser,{displayName:name, photoURL:photoURL})
  }
    const authInfo= {user,loader,signinGoogle,signinGithub,logOut,createUser,signIn,userUpdateName,forgetPassword}
     return (

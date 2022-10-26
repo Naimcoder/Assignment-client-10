@@ -16,15 +16,15 @@ const Register = () => {
   const email= from.email.value;
   const password=from.password.value;
   const name=from.name.value;
-  const photoURL=from.photoURL.value
+  const photoURL=from.Photo.value;
   console.log(email,name,password,photoURL)
 
   createUser(email,password)
   .then(result=>{
     const user= result.user
     console.log(user)
-    from.reset()
     handleupdateName(name,photoURL)
+    from.reset()
     Swal.fire(
     'Good job!',
     'You clicked the button!',
@@ -58,11 +58,7 @@ const Register = () => {
   }
   // updateprofile part start
   const handleupdateName=(name,photoURL)=>{
-    const profile = {
-      displayName:name,
-      photoURL:photoURL
-    }
-    userUpdateName(profile)
+    userUpdateName(name,photoURL)
     .then(()=>{
     })
     .catch((error)=>{
@@ -105,7 +101,7 @@ const Register = () => {
                       type="text"
                       className="text-xl flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="PhotoURL"
-                      name="PhotoURL"
+                      name="Photo"
                     />
                   </div>
                   <div className="mb-1 sm:mb-2">
