@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaDownload, FaUser } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
-import Pdf from "react-to-pdf";
+import ReactToPdf from "react-to-pdf";
 
 const CoursesDetails = () => {
     const ref = React.createRef();
@@ -14,16 +14,18 @@ const CoursesDetails = () => {
   <div className="sm:max-w-xl lg:w-8/12 mx-auto lg:p-15 p-6 overflow-hidden rounded-lg my-5 bg-white shadow-xl dark:text-gray-100">
 	<article  ref={ref}>
     <img className='mx-auto' src={image} alt="" />
-
     <div className='flex justify-between items-center'>
 	  <h2 className="text-xl font-bold">{title}</h2>
-      <Pdf targetRef={ref} filename="code-example.pdf">
-          {({ toPdf }) => <button className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center ' onClick={toPdf}>
-              <FaDownload></FaDownload>
-            </button>}
-      </Pdf>
+    {/* react to pdf start */}
+   <div>
+    <ReactToPdf x={30}
+        y={.5} className='pl-30' targetRef={ref} filename="div-blue.pdf">
+        {({toPdf}) => (
+            <button className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center' onClick={toPdf}> <FaDownload></FaDownload></button>
+        )}
+    </ReactToPdf>
+   </div>
     </div>
-    
 		<p  className="mt-4  dark:text-gray-400">{details}</p>
 		<div className="flex items-center mt-8 space-x-4">
             <span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
