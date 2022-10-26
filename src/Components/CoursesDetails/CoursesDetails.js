@@ -35,7 +35,7 @@ const CoursesDetails = () => {
 				<time datetime="2021-02-18" className="text-sm dark:text-gray-400">{author.published_date}</time>
 			</div>
             <Link to={`/checkout/${id}`}>
-             <button className='btn lg:ml-32 sm:ml-15 px-3 text-white lg:text-lg lg:font-bold bg-blue-600 py-2 lg:px-10  rounded shadow-lg'>Get premium</button>
+             <button className='btn lg:ml-32 sm:ml-15 px-5 text-white lg:text-lg lg:font-bold bg-blue-600 py-2 lg:px-10   rounded shadow-lg'>Get premium</button>
             </Link>
 		</div>
 	</article>
