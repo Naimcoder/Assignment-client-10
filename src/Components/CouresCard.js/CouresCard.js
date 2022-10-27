@@ -28,7 +28,7 @@ const {id,name,details,image}= courses
               aria-label=""
               className="text-lg mt-5 w-full text-blue-700 inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
-              <button className=' pointer-events-auto  uppercase bg-indigo-600 py-3 px-2  font-semibold leading-5 text-white hover:bg-indigo-500'>Details</button>
+              <button className=' pointer-events-auto  uppercase bg-indigo-600 py-3 px-8  font-semibold leading-5 text-white hover:bg-indigo-500'>Details</button>
             </Link>
          </div>
        </div>
