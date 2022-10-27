@@ -19,14 +19,13 @@ const Register = () => {
   const photoURL=from.Photo.value;
   console.log(email,name,password,photoURL)
   
-  
-
   createUser(email,password)
   .then(result=>{
     const user= result.user
     console.log(user)
     handleupdateName(name,photoURL)
-    from.reset()
+     from.reset()
+    setError('')
     Swal.fire(
     'Good job!',
     'You clicked the button!',
