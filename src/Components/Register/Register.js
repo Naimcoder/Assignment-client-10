@@ -18,6 +18,8 @@ const Register = () => {
   const name=from.name.value;
   const photoURL=from.Photo.value;
   console.log(email,name,password,photoURL)
+  
+  
 
   createUser(email,password)
   .then(result=>{

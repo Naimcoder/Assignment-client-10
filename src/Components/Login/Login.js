@@ -20,6 +20,10 @@ const from= location.state?.from?.pathname ||'/';
   const email= froms.email.value;
   const password=froms.password.value;
   console.log(email,password)
+  if(password.length>8){
+    setError('Your password must be at least 8 characters')
+    return;
+}
   signIn(email,password)
   .then((result)=>{
     const user=result.user
