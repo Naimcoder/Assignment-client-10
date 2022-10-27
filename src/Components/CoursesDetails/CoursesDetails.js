@@ -30,7 +30,6 @@ const CoursesDetails = () => {
         )}
     </ReactToPdf>
    </div>
-
     </div>
 		<p  className="mt-4  dark:text-gray-400">{details}</p>
 		<div className="flex items-center mt-8 space-x-4">
