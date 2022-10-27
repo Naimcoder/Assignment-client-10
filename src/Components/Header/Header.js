@@ -88,16 +88,6 @@ const Header = () => {
             user?.uid?<><p className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  capitalize text-xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>{user?.displayName}</p>
             <button className='bg-white  inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black  capitalize text-2xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none' onClick={handleSignOut}>Logout</button>
             </>:<>
-              <li>
-              <Link
-                to="/login"
-                aria-label="Sign in"
-                title="Sign in"
-                className=" inline-flex items-center justify-center h-12 px-6 font-medium  text-white  capitalize text-2xl transition duration-200 rounded shadow-md  "
-              >
-                Sign in
-              </Link>
-            </li>
             <li>
               <Link
                 to="/register"
@@ -113,7 +103,17 @@ const Header = () => {
            {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
 
            }
-           <input  onChange={()=>{setDarkmode(!darkMode)}} className='text-2xl toggle toggle-accent' type="checkbox" />
+           <li>
+            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+   	        <span></span>
+            <span className="relative">
+	          <input id="Toggle2" type="checkbox" onChange={()=>{setDarkmode(!darkMode)}} className="hidden peer" />
+		        <div className="w-10 h-4 rounded-full shadowbg-gray-600 peer-checked bg-violet-400"></div>
+		        <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1       peer-checked:right-0 peer-checked:left-auto bg-violet-400"></div>
+	          </span>
+            </label>
+           </li>
+          
           </ul>
           <div className="lg:hidden">
             <button
@@ -144,8 +144,8 @@ const Header = () => {
                     <div>
                       <Link
                         to="/"
-                        aria-label="Company"
-                        title="Company"
+                        aria-label="Eduvide"
+                        title="Eduvide"
                         className="inline-flex items-center"
                       >
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
@@ -215,16 +215,6 @@ const Header = () => {
                         user?.uid?<><p className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black  capitalize text-xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>{user?.displayName}</p>
                         <button className='bg-white  inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black  capitalize text-2xl transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none' onClick={handleSignOut}>Logout</button>
                        </>:<>
-                        <li>
-                        <Link
-                          to="/login"
-                          aria-label="Sign in"
-                          title="Sign in"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Sign in
-                        </Link>
-                      </li>
                       <li>
                         <Link
                           to="/register"
@@ -238,8 +228,7 @@ const Header = () => {
                        </>
                       }
                      {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
-
-           }
+                      }
                     </ul>
                   </nav>
                 </div>
