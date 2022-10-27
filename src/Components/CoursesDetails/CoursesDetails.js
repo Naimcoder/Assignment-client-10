@@ -23,7 +23,7 @@ const CoursesDetails = () => {
    <div>
 
 
-    <ReactToPdf x={30}
+    <ReactToPdf x={20}
         y={20} className='pl-30' targetRef={ref} filename="div-blue.pdf">
         {({toPdf}) => (
             <button className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center' onClick={toPdf}> <FaDownload></FaDownload></button>
