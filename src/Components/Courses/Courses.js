@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CouresCard from '../CouresCard.js/CouresCard';
-import SingleCourse from '../SingleCourse/SingleCourse';
+import CouresCard from '../CoursesPage/CouresCard.js/CouresCard';
+import SingleCourse from '../CoursesPage/SingleCourse/SingleCourse';
 
 const Courses = () => {
 
