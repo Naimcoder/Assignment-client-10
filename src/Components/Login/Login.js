@@ -24,8 +24,8 @@ const from= location.state?.from?.pathname ||'/';
   .then((result)=>{
     const user=result.user
     console.log(user)
+     froms.reset()
     setError('')
-   froms.reset()
    Swal.fire(
   'Good job!',
   'You clicked the button!',
