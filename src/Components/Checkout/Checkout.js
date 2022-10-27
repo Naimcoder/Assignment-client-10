@@ -13,6 +13,7 @@ const Checkout = () => {
     <div className="mt-6 mb-2">
 		<span className="block text-xs font-medium tracking-widest uppercase dark:dark:text-violet-400">Get premium</span>
 		<h2 className="text-xl font-semibold tracking-wide">{name}</h2>
+        <h3>Course Fee: $399</h3>
         <button className=' font-bold btn my-3 text-center  bg-lime-500 py-2 px-5'>Buy Now</button>
 	</div>
 </div>
