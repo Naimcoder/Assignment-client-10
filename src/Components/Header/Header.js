@@ -104,7 +104,7 @@ const Header = () => {
 
            }
            <li>
-            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+            <label htmlFor="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
    	        <span></span>
             <span className="relative">
 	          <input id="Toggle2" type="checkbox" onChange={()=>{setDarkmode(!darkMode)}} className="hidden peer" />
